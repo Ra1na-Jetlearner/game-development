@@ -1,0 +1,25 @@
+import pgzrun
+import random
+
+message=" "
+ballrina = Actor("ballrina")
+ballrina.pos = (200,200)
+
+def draw():
+    screen.fill(color=(21,41,67))
+    ballrina.draw()
+    screen.draw.text(message, color="lightblue", center=(41,67))
+
+def on_mouse_down(pos):
+
+    global message
+    if ballrina.collidepoint(pos):
+        ballrina.pos=random.randint(0,800),(random.randint(0,500))
+        message=("BEGINERS LUCK")
+    else:
+        message=("MISSED TRY AGAIN SLOWPOKE")
+        
+
+
+
+pgzrun.go()
