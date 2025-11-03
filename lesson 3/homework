@@ -1,0 +1,19 @@
+import pgzrun
+import random
+
+WIDTH=500
+HEIGHT=500
+
+flower = []
+for i in range(10):
+    f=Actor("flower")
+    f.pos = random.randint(0,500),random.randint(0,500)
+    flower.append(f)
+
+def draw():
+    screen.blit("nature",(0,0))
+    for f in flower:
+        f.draw()
+
+
+pgzrun.go()
