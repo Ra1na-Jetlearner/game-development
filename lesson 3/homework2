@@ -1,0 +1,35 @@
+import pgzrun
+
+WIDTH=500
+HEIGHT=500
+
+flow=Actor("flower")
+sat=Actor("satellite")
+
+def draw():
+    screen.fill("orange")
+    flow.draw()
+    sat.draw()
+
+def update():
+    if keyboard.left:
+        flow.x-=10
+    if keyboard.right:
+        flow.x+=10
+    if keyboard.up:
+        flow.y+=10
+    if keyboard.down:
+        flow.y-=10
+    if keyboard.a:
+        sat.x-=10
+    if keyboard.d:
+        sat.x+=10
+    if keyboard.w:
+        sat.y-=10
+    if keyboard.s:
+        sat.y+=10    
+
+
+
+
+pgzrun.go()
