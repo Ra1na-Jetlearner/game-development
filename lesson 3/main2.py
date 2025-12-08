@@ -26,10 +26,21 @@ def draw():
 
 def on_mouse_down(pos):
     global idx
+    global text,click
+    if flo.collidepoint(pos):
+        click+=1
+        text="flower collided"
+    if click>=3:
+        text="click 3 times"
+    if click>=6:
+        text="stop it!!!!!!"
+    if click>=9:
+        text="STOP BOTHERING ME IM JUST A SMALL FLOWER"
     if satellite[idx].collidepoint(pos):
         prev=satellite[idx-1]
         curr=satellite[idx]
         start.append(prev.pos)
         end.append(curr.pos)
         idx+=1
+
 pgzrun.go()

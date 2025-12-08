@@ -3,6 +3,9 @@ import pgzrun
 WIDTH=500
 HEIGHT=500
 
+idx=[]
+text=" "
+click=0
 flow=Actor("flower")
 sat=Actor("satellite")
 
@@ -10,6 +13,23 @@ def draw():
     screen.fill("orange")
     flow.draw()
     sat.draw()
+    screen.draw.text(text,color="white",pos=(200,250))
+
+
+def on_mouse_down(pos):
+    global idx
+    global text,click
+    if flow.collidepoint(pos):
+        if click>=5:
+            text="...."
+        if click>=10:
+            text="click"
+    if sat.collidepoint(pos):
+        if click>=6:
+            text=",,"
+        if click>=10:
+            text="0000"
+    click+=1
 
 def update():
     if keyboard.left:
