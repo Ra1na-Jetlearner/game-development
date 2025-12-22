@@ -1,0 +1,31 @@
+import pgzrun
+import random
+
+WIDTH=800
+HEIGHT=600
+
+ITEMS=["batteryimg","bottleimg","chipsimg","bagimg"]
+Actors=[]
+
+
+def draw():
+    screen.fill("orange")
+    screen.blit("newbg",(0,0))
+    for actor in Actors:
+        actor.draw()
+
+
+for i in range(5):
+    item = random.choice(ITEMS)
+    actor = Actor(item)
+
+    
+    x=random.randint(0,800)
+    y=random.randint(0,600)
+    actor.pos =(x,y)
+    Actors.append(actor)
+    animate(actor, y = HEIGHT, duration=2)
+
+
+pgzrun.go()
+

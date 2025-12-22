@@ -27,6 +27,11 @@ def setup():
         idk=Actor(selected_item[i])
         Actors.append(idk)
         idk.pos=random.randint(0,800),50
+    
+    for actor in Actors:
+        animate(actor, y = HEIGHT, duration=6)
+
+
 
 def update():
     pass
